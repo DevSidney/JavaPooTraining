@@ -8,12 +8,11 @@ public class Aluno {
 		double media = 0;
 		for (int i = 0; i < notas.length; i++) {
 			if (i == 0) {
-				notas[i] *= 30;
+				media = notas[i] * 0.30;
 			} else {
-				notas[i] *= 35;
+				media += notas[i] * 0.35;
 			}
 
-			media += notas[i]/100;
 		}
 		return media;
 
@@ -22,7 +21,7 @@ public class Aluno {
 	public String resultadoFinal(double porcentagem) {
 		double resultado = media();
 		if (resultado < porcentagem/10) {
-			return "nota final= " + resultado + ". Reprovado." + " Faltam " + (porcentagem - resultado + "pontos");
+			return "nota final= " + resultado + ". Reprovado." + " Faltam " + String.format("%.2f", (porcentagem/10 - resultado)) + " pontos";
 		} else {
 			return "nota final= " + resultado + ". Aprovado.";
 		}
