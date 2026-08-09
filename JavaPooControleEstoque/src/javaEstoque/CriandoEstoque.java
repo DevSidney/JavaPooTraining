@@ -1,23 +1,22 @@
 package javaEstoque;
 
-import entidades.Produto;
 import java.util.Scanner;
 
+import entidades.Produto;
+
 public class CriandoEstoque {
-	
-	
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		Produto a;
-		a = new Produto();
-
 		System.out.println("insira o nome do produto: ");
-		a.nomeProduto = sc.nextLine();
+		String nomeProduto = sc.nextLine();
 		System.out.println("insira o preco do produto: ");
-		a.precoProduto = sc.nextDouble();
+		double precoProduto = sc.nextDouble();
 		System.out.println("insira a quantidade do produto: ");
-		a.quantidadeProduto = sc.nextInt();
+		int quantidadeProduto = sc.nextInt();
+
+		Produto a = new Produto(nomeProduto, precoProduto, quantidadeProduto);
 
 		System.out.format(
 				"O nome do produto é %s%nO preco do produto é $%.2f%nA quantidade em estoque é de %d unidades e o valor total desse protudo no estoque é de %.2f%n",
@@ -32,14 +31,14 @@ public class CriandoEstoque {
 				quantidade = sc.nextInt();
 				a.adicionarProdutos(quantidade);
 				System.out.println(a);
-				
+
 			} else if (opcaoEscolhida == 2) {
 				System.out.println("digite a quantidade desse produto que vai ser removida do estoque: ");
 				quantidade = sc.nextInt();
 				a.removerProduto(quantidade);
 				System.out.println(a);
-				
-			}else {
+
+			} else {
 				System.out.println("digite um valor valido! ");
 			}
 

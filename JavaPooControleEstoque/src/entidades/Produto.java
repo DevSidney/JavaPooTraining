@@ -4,6 +4,12 @@ public class Produto {
 	public String nomeProduto;
 	public double precoProduto;
 	public int quantidadeProduto;
+	
+	public Produto (String nomeProduto, double precoProduto, int quantidadeProduto) {
+		this.nomeProduto = nomeProduto;
+		this.precoProduto = precoProduto;
+		this.quantidadeProduto = quantidadeProduto;
+	}
 
 	public double valorTotal() {
 		return precoProduto * quantidadeProduto;
