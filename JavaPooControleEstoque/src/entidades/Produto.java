@@ -22,30 +22,33 @@ public class Produto {
 		quantidadeProduto = 0;
 	}
 
-	public String setNomeProduto(String nomeProduto) {
-		return this.nomeProduto = nomeProduto;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 	public String getNomeProduto() {
 		return nomeProduto;
 	}
 
-	public double setPrecoProduto(double precoProduto) {
-		return this.precoProduto = precoProduto;
+	public void setPrecoProduto(double precoProduto) {
+		this.precoProduto = precoProduto;
 	}
 
 	public double getPrecoProduto() {
 		return precoProduto;
 	}
 
-	public int setQuantidadeProduto(int quantidadeProduto) {
-		return this.quantidadeProduto = quantidadeProduto;
+	public void setQuantidadeProduto(int quantidadeProduto) {
+		this.quantidadeProduto = quantidadeProduto;
 	}
 
 	public int getQuantidadeProduto() {
 		return quantidadeProduto;
 	}
 
+	
+	
+	
 	public double valorTotal() {
 		return precoProduto * quantidadeProduto;
 	}
