@@ -20,7 +20,7 @@ public class CriandoEstoque {
 
 		System.out.format(
 				"O nome do produto é %s%nO preco do produto é $%.2f%nA quantidade em estoque é de %d unidades e o valor total desse protudo no estoque é de %.2f%n",
-				a.nomeProduto, a.precoProduto, a.quantidadeProduto, a.valorTotal());
+				a.getNomeProduto(), a.getPrecoProduto(), a.getQuantidadeProduto(), a.valorTotal());
 
 		System.out.println("digite 1 para adicionar algum produto, 2 para remover e 0 pra sair.");
 		int opcaoEscolhida = sc.nextInt();

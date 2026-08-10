@@ -1,14 +1,49 @@
 package entidades;
 
 public class Produto {
-	public String nomeProduto;
-	public double precoProduto;
-	public int quantidadeProduto;
-	
-	public Produto (String nomeProduto, double precoProduto, int quantidadeProduto) {
+	private String nomeProduto;
+	private double precoProduto;
+	private int quantidadeProduto;
+
+	public Produto(String nomeProduto, double precoProduto, int quantidadeProduto) {
 		this.nomeProduto = nomeProduto;
 		this.precoProduto = precoProduto;
 		this.quantidadeProduto = quantidadeProduto;
+	}
+
+	// Sobrecarga. basicamente eu posso criar outros com mesmo nome mas que
+	// recebam menos parametros (Os outro serao iniciados com o valor escolhido
+	// ou com 0 (nesse caso nao precisa colocar o 0 porque por padrao ja comeca com
+	// 0
+	// mas é pra eu nao me esquecer
+	public Produto(String nomeProduto, double precoProduto) {
+		this.nomeProduto = nomeProduto;
+		this.precoProduto = precoProduto;
+		quantidadeProduto = 0;
+	}
+
+	public String setNomeProduto(String nomeProduto) {
+		return this.nomeProduto = nomeProduto;
+	}
+
+	public String getNomeProduto() {
+		return nomeProduto;
+	}
+
+	public double setPrecoProduto(double precoProduto) {
+		return this.precoProduto = precoProduto;
+	}
+
+	public double getPrecoProduto() {
+		return precoProduto;
+	}
+
+	public int setQuantidadeProduto(int quantidadeProduto) {
+		return this.quantidadeProduto = quantidadeProduto;
+	}
+
+	public int getQuantidadeProduto() {
+		return quantidadeProduto;
 	}
 
 	public double valorTotal() {
@@ -24,7 +59,8 @@ public class Produto {
 	}
 
 	public String toString() {
-		return "Atualizacao: " + nomeProduto + ", $" + String.format("%.2f", precoProduto) + ", " + "O produto passou a ter " + quantidadeProduto
-				+ " unidades no estoque, " + "o novo valor passou a ser $" + String.format("%.2f", valorTotal());
+		return "Atualizacao: " + nomeProduto + ", $" + String.format("%.2f", precoProduto) + ", "
+				+ "O produto passou a ter " + quantidadeProduto + " unidades no estoque, "
+				+ "o novo valor passou a ser $" + String.format("%.2f", valorTotal());
 	}
 }
