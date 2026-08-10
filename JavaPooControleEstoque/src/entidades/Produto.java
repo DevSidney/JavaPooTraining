@@ -38,17 +38,12 @@ public class Produto {
 		return precoProduto;
 	}
 
-	public void setQuantidadeProduto(int quantidadeProduto) {
-		this.quantidadeProduto = quantidadeProduto;
-	}
+//nao cria uma set quantidadeProdutos pra proteger a integridade do negocio, uma vez que a quantidade das coisas so vai poder ser alterada por meio da entrada e saida dos metodos criados exatamente pra isso.
 
 	public int getQuantidadeProduto() {
 		return quantidadeProduto;
 	}
 
-	
-	
-	
 	public double valorTotal() {
 		return precoProduto * quantidadeProduto;
 	}
