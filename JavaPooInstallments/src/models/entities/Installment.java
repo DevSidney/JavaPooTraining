@@ -32,8 +32,6 @@ public class Installment {
 	public String toString() {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		StringBuilder sb = new StringBuilder();
-		sb.append("INSTALLMENTS:" + "\n");
-		sb.append("========================");
 		sb.append("Due date: " + dueDate.format(dtf) + "\n");
 		sb.append("amount: R$" + String.format("%.2f", amount) + "\n");
 		return sb.toString();

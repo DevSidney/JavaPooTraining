@@ -1,6 +1,7 @@
 package program;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import models.entities.Contract;
@@ -15,8 +16,9 @@ public class Main {
 		Integer number = sc.nextInt();
 		sc.nextLine();
 		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		System.out.println("enter the date of the contract: ");
-		LocalDate date = LocalDate.parse(sc.nextLine());
+		LocalDate date = LocalDate.parse(sc.nextLine(), dtf);
 		
 		System.out.println("enter the total value of the contract: ");
 		Double totalValue = sc.nextDouble();
@@ -29,6 +31,8 @@ public class Main {
 		ContractService cs = new ContractService();
 		cs.processContract(contract, installments);
 		
+		System.out.println("INSTALLMENTS:/n");
+		System.out.println("=======================\n");
 		for(Installment a : contract.getInstallments()) {
 		System.out.println(a);
 		}
